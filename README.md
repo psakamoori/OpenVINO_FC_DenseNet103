@@ -1,6 +1,6 @@
-# OpenVINO Image Semantic Segmentation inference app for FCDenseNet103 
+# OpenVINO App for Image Semantic Segmentation using FCDenseNet103 
 
-OpenVINO based Semantic Segmentation using FC DenseNet 103 
+OpenVINO based FC-DenseNet-103 Image Semantic Segmentation with single/multi device (heterogenous) inference on Intel Powered  Edge device. 
 
 # Pre-requisites
    1. Ubuntu 16.04/18.04 machine with OpenVINO 2020.R1/R2 with python3

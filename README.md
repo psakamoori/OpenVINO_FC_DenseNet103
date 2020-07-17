@@ -2,7 +2,10 @@
 
 OpenVINO based Semantic Segmentation using FC DenseNet 103 
 
-
+# Pre-requisites
+   1. Ubuntu 16.04/18.04 machine with OpenVINO 2020.R1/R2
+   2. Intel Powered Edge device with CPU/iGPU/VPU (HDDL, NCS2)
+  
 # Running OpenVINO Model Optimizer for IR files
 
   1. Convert keras h5 to tensorflow pb 

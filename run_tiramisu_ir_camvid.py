@@ -124,12 +124,6 @@ def main():
             output_name, output_info = output_key, net.outputs[output_key]
 
     output_dims = output_info.shape
-    #if len(output_dims) != 4:
-    #    log.error("Incorrect output dimensions for SSD model")
-    #max_proposal_count, object_size = output_dims[2], output_dims[3]
-
-    #if object_size != 7:
-    #    log.error("Output item should have 7 as a last dimension")
 
     output_info.precision = "FP32"
     # -----------------------------------------------------------------------------------------------------
@@ -154,27 +148,15 @@ def main():
     outcome = np.resize(res, (224, 224))
 
     label_codes, label_names, code2id = decode(args.labels)
-    #print("label_codes =", label_codes)
-    #print("label_names =", label_names)
-    #print("code2id =", args.labels)
 
     id2code = {val: key for (key, val) in code2id.items()}
 
     outcome = color_label(outcome, id2code)
 
     img = Image.fromarray(outcome)
-    #cv2.imwrite("out.bmp", img)
     img.save("output.bmp")
     log.info("Image out.bmp created!")
 
-    #pred = np.argmax(res)    
-
-    #for imid in classes:
-    #    tmp_image = cv2.imread(args.input[imid])
-    #    for box in boxes[imid]:
-    #        cv2.rectangle(tmp_image, (box[0], box[1]), (box[2], box[3]), (232, 35, 244), 2)
-    #    cv2.imwrite("out.bmp", tmp_image)
-    #    log.info("Image out.bmp created!")
     # -----------------------------------------------------------------------------------------------------
 
     log.info("Execution successful\n")
